@@ -1,134 +1,77 @@
-.\" _printf man page
-.\"
-.\"
-.\"
-.\"
-.\"
-.TH _PRINTF "July 30 2019" "0.1" "Library functions manual"
-
+.\" Manpage for _printf.
+.TH _printf 3 "17 April 2022" "1.0" "User commands for _printf"
 .SH NAME
-.SH ""
-
-.B _printf
-- custom version for printf function.
-
+ _printf - format and print data.
 .SH SYNOPSIS
-.SH ""
-
-#include "main.h"
-
-int _printf(const char *[FORMAT], ...);
-
+.nf
+.BI printf FORMAT [ARGUMENT]...
+.PP
+.BI "#include 'main.h'"
+.BI "#include <stdarg.h>"
+.BI "#include <unistd.h>"
+.BI "#include <stdlib.h>"
+.BI "#include <stdio.h>"
+.BI "#include <limits.h>"
+.PP
+.BI "int _printf(const char *format, ...);"
+.BI "buff_append(char *buff_dest, va_list arg, unsigned int buff_count, char (*parser)(va_list));"
+.BI "print_buff(char *buff, unsigned int nbuff);"
+.BI "str_len(char *s);"
+.BI "*_strcpy(char *dest, char *src);"
+.BI "parse_char(va_list arg);"
+.BI "int parse_string(char *buff_dest, va_list arg, int buff_count);"
+.BI "int parse_int(char *string, va_list list, int buff_count);"
+.BI "int parse_perc(char *buff_dest, va_list arg, int buff_count);"
+.BI "int parse_binary(char *buff_dest, va_list arg, int buff_count);"
+.PP
 .SH DESCRIPTION
-.SH ""
+The function _printf() prints ARGUMENTS(s) according to format, or execute according to various Option.
+.PP
+.SH RETURN VALUE
+Returns the number of all the characters printed, excluding the NULL byte used to end output to strings.
+.SH Format String Format
+The format string is a character string, which contains two types of directives: ordinary characters which are coppied to the output stream; and conversion specifiers. Each conversion specification is introduced by the character %, and ends with a conversion specifier.
+.SH Conversion Specifiers
+This are the characters that specifies the type of conversion to be applied. The conversion specifiers and their meanings are:
+.TP
+.B c
+.R The \fIint\fR argument is converted to a char, and the result is printed.
+.TP
+.B s
+.R The \fIconst char *\fR is a pointer to an array of characters, that converts the corresponding argument to a character string.
+.TP
+.B d, i
+.R The \fIint\fR argument is converted to signed decimal notation.
+.TP
+.B %, %%
+.R If only the \fI%\fR character is written no argument is converted. The complete conversion specification is \fI%%\fR, that returns the actual sign if there in front.
+.PP
+.SH NOTES
+.R The \fB_printf()\fR is a project collaboration between \fBSamuel Adebayo\fR and \fBGerald Juwah\fR, Students studing Software Engineering at \fBALX School\fR.
+.SH BUGS
+.R In process
+.PP
+.SH EXAMPLE
+.R To print the the string \fBHello ALX!\fR and its length in decimal.
 
-
-The printf function sends formatted output to stdout.
-A custom _printf() for learning purposes was developed by cohort  #9 students Jimmer and Edward Ortiz.
-_printf() function format string is a character string, beginning and ending in its initial shift state, if any. 
-These arguments are placed using the percentage '%' operator
-
-.SS Compilation
-
-.P
-.RS
 #include "main.h"
 
-$ gcc -Wall -Werror -Wextra -pedantic -Wno-format *.c
-$ gcc -Wall -Werror -Wextra -pedantic -g -Wno-format *.c (for gdb debbuging)
-.RE
+int main(void)
 
-.SS Printing
-.RS
+{
 
-int _printf(const char *[FORMAT], ...);
+	int length;
 
-FORMAT is the string that takes n specifier followed by a '%'
-symbol. i.e. "Hello this is %s from %d cohort". '...' is the variadic \
-(any type of variable).
+	_printf("%s\n", "Hello, ALX!")
 
-.SS Example
+	_printf("Hello ALX! contains %d characters\n", length);
 
-.RS
+	length = _printf("Hello Holberton!");
 
-.B Input
-.PP
-_printf("Hello this is %s from %d cohort\\n\\", 33);
-.PP
-.B Output
-.PP
-Hello this is %s from %d cohort
-.RE
+	return (0);
 
-.SS Return Value
-
-Return value is a n number of characters except NULL
-
-.SH FLAG SPECIFIERS
-.SH ""
-
-custom and non-custom specifier modifiers
-
-.SH THE LENGTH MODIFIERS
-.SH ""
-
-Length modifiers.
-
-.SH THE CONVERSION SPECIFIERS
-.SH ""
-
-.RS
-Current arguments handled by conversion specifiers:
-
-.IT
-.B %
-- % symbol is set without argument and conversion specification has to be'%%'.
-
-.IT
-.B c
-- integer or char argument converted to unsigned char.
-
-.IT
-.B d, i
-- int argument is converted to signed decimal integer.
-
-.IT
-.B s
-- string argument. _printf handles s conversion specifier if the argument value
- is not a pointer to a literal string. \
-
-.IT
-
-.B o, u, x, X
-- unsigned int argument converted to unsigned octal (o), unsigned decimal (u),
-unsigned hexidecimal notation (x) for lower case and (X) for upper case
-
-.IT
-.B b
-- The unsigned int argument is converted to binary.
-
-.IT
-.B p
-- The pointer is printed in hexidecimal format preceded by '0x'.
-
-.IT
-.B r, R
-- 'r' prints string in reverse. 'R' prints encrypted rot13.
-
-.IT
-.B S
-- ascii <32 & >127 has to appear in the argument string. converted to
-hexadecimal preceded by \x
-
-.RE
-
-.P
-
-.SH "AUTHORS"
-.SH ""
-
-Abreham Eshetu and Mehary Alemu
-
-.B Twitter
-.PP
-@Camilojimmer @edward0rtiz
+}
+.SH SEE ALSO
+.R printf(3)
+.SH AUTHORS
+Written by \Abreham Eshetu and \Mehary Alemu

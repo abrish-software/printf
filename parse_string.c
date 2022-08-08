@@ -7,7 +7,7 @@
  * @buff_count: index f buffer pointer
  * Return: The number of characters printed.
  */
-int parse_str(char *buff_dest, va_list arg, int buff_count)
+int parse_string(char *buff_dest, va_list arg, int buff_count)
 {
 	char *str;
 	int i = 0;

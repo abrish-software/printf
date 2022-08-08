@@ -6,20 +6,8 @@
  * Return: Always 1 (Success)
  */
 int print_c(va_list c)
-{
-	char *s;
-	char c;
+{char character = (char)va_arg(c, int);
 
-	c = va_arg(list, int);
-
-	if (c == 0)
-		c = '\0';
-
-	s = malloc(sizeof(char) * 2);
-	if (s == NULL)
-		return (NULL);
-	s[0] = c;
-	s[1] = '\0';
-
-	return (s);
+	_putchar(character);
+	return (1);
 }

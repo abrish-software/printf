@@ -100,3 +100,4 @@ int _printf(const char *format, ...)
 	write_buffer(buffer, len, list);
 	return (total_len);
 }
+

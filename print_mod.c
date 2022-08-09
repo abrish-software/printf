@@ -1,10 +1,19 @@
 #include "main.h"
+#include <unistd.h>
+
 /**
- * printf_37 - prints the char 37.
- * Return: 1.
+ * print_mod - print %.
+ *
+ * @args: arguments.
+ *
+ * Return: count of chars.
  */
-int printf_37(void)
+
+int print_mod(va_list args)
 {
-	_putchar(37);
+	(void)args;
+
+	_putchar('%');
+
 	return (1);
 }

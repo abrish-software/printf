@@ -15,9 +15,9 @@ int get_function(char con_spec, va_list args)
 	int count_fun = 0;
 
 	specifiers_t spec[] = {
-		{'c', printf_char},
-		{'s', printf_string},
-		{'%', printf_37},
+		{'c', print_char},
+		{'s', print_string},
+		{'%', print_mod},
 		{'d', print_digit},
 		{'i', print_digit},
 		{'r', print_rev_string},
@@ -26,7 +26,6 @@ int get_function(char con_spec, va_list args)
 		{'o', printf_oct},
 		{'x', printf_hex},
 		{'X', printf_HEX},
-		{'S', print_S},
 		{0, NULL}
 	};
 

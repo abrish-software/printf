@@ -35,4 +35,5 @@ int printf_hex(va_list args);
 int printf_oct(va_list args);
 int printf_unsigned(va_list args);
 int printf_exclusive_string(va_list args);
+int printf_HEX_aux(unsigned int num);
 #endif

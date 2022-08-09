@@ -29,5 +29,5 @@ int print_string(va_list args);
 int print_digit(va_list args);
 int print_mod(va_list args);
 int print_rev_string(va_list args);
-
+int printf_bin(va_list val);
 #endif

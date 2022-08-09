@@ -26,6 +26,7 @@ int get_function(char con_spec, va_list args)
 		{'o', printf_oct},
 		{'x', printf_hex},
 		{'X', printf_HEX},
+		{'S', printf_exclusive_string},
 		{0, NULL}
 	};
 

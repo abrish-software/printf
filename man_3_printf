@@ -62,4 +62,4 @@ On success, _printf returns the number of printed characters. If formats is erro
 
 .SH AUTHORS
 
-Bruno Rodriguez, Oscar Bedat
+Abreham Eshetu, Mehary Alemu

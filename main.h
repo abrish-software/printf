@@ -30,4 +30,8 @@ int print_digit(va_list args);
 int print_mod(va_list args);
 int print_rev_string(va_list args);
 int printf_bin(va_list args);
+int printf_HEX(va_list args);
+int printf_hex(va_list args);
+int printf_oct(va_list args);
+int printf_unsigned(va_list args);
 #endif

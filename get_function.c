@@ -22,6 +22,10 @@ int get_function(char con_spec, va_list args)
 		{'i', print_digit},
 		{'r', print_rev_string},
 		{'b', printf_bin},
+		{'u', printf_unsigned},
+		{'o', printf_oct},
+		{'x', printf_hex},
+		{'X', printf_HEX},
 		{0, NULL}
 	};
 

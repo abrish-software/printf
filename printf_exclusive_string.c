@@ -5,7 +5,7 @@
  * Return: the length of the string.
  */
 
-int printf_exclusive_string(unsigned int num)
+int printf_exclusive_string(va_list args)
 {
 	int i;
 	int *array;

@@ -1,29 +1,29 @@
 #include "main.h"
-#include <unistd.h>
-#include <stdarg.h>
-
 /**
- * print_string - print string.
- *
- * @args: argument.
- *
- * Return: character count.
+ * printf_string - print a string.
+ * @val: argumen t.
+ * Return: the length of the string.
  */
 
-int print_string(va_list args)
+int printf_string(va_list args)
 {
-	int i;
-	int count_fun = 0;
-	char *str = va_arg(args, char *);
+	char *s;
+	int i, len;
 
-	if (!str)
-		str = "(null)";
-
-	if (str[0] == '\0')
-		return (-1);
-
-	for (i = 0; str[i] != '\0'; i++)
-		count_fun += _putchar(str[i]);
-
-	return (count_fun);
+	s = va_arg(args, char *);
+	if (s == NULL)
+	{
+		s = "(null)";
+		len = _strlen(s);
+		for (i = 0; i < len; i++)
+			_putchar(s[i]);
+		return (len);
+	}
+	else
+	{
+		len = _strlen(s);
+		for (i = 0; i < len; i++)
+			_putchar(s[i]);
+		return (len);
+	}
 }

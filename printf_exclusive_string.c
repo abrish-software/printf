@@ -10,11 +10,11 @@ int printf_exclusive_string(va_list args)
 	int i;
 	int *array;
 	int counter = 0;
-	unsigned int temp = num;
+	unsigned int temp = va_arg(args, int);
 
-	while (num / 16 != 0)
+	while (args / 16 != 0)
 	{
-		num /= 16;
+		args /= 16;
 		counter++;
 	}
 	counter++;

@@ -21,7 +21,7 @@ int get_function(char con_spec, va_list args)
 		{'d', print_digit},
 		{'i', print_digit},
 		{'r', print_rev_string},
-		{"b", printf_bin}
+		{'b', printf_bin}
 		{0, NULL}
 	};
 

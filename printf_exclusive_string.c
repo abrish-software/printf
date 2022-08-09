@@ -7,30 +7,36 @@
 
 int printf_exclusive_string(va_list args)
 {
-	int i;
-	int *array;
-	int counter = 0;
-	unsigned int temp = va_arg(args, int);
+	char *s;
+	int i, len;
+	int cast;
 
-	while (args / 16 != 0)
+	s = va_arg(args, char *);
+	if (s == NULL)
 	{
-		args /= 16;
-		counter++;
+		s = "(null)";
+		len = _strlen(s);
+		for (i = 0; i < len; i++)
+			_putchar(s[i]);
+		return (len);
 	}
-	counter++;
-	array = malloc(counter * sizeof(int));
-
-	for (i = 0; i < counter; i++)
+	else
 	{
-		array[i] = temp % 16;
-		temp /= 16;
+		len = _strlen(s);
+		for (i = 0; i < len; i++)
+		{
+			if ((s[i] < 32 && s[i] > 0) || s[i] >= 127)
+			{
+				_putchar('\\');
+				_putchar('x');
+				cast = s[i];
+				if (cast < 16)
+					_putchar('0');
+				printf_HEX_aux(cast);
+				i++;
+			}
+			_putchar(s[i]);
+		}
+		return (len);
 	}
-	for (i = counter - 1; i >= 0; i--)
-	{
-		if (array[i] > 9)
-			array[i] = array[i] + 7;
-		_putchar(array[i] + '0');
-	}
-	free(array);
-	return (counter);
 }

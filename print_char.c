@@ -5,7 +5,7 @@
  * @val: arguments.
  * Return: 1.
  */
-int print_char(va_list args)
+int *print_char(va_list args)
 {
 	char *s;
 	char c;

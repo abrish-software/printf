@@ -10,7 +10,7 @@
  * Return: character count.
  */
 
-int print_string(va_list args)
+int *print_string(va_list args)
 {
 	char *s;
 	char *p;

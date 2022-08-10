@@ -12,18 +12,19 @@
 
 int print_string(va_list args)
 {
-	int i;
-	int count_fun = 0;
-	char *str = va_arg(args, char *);
+	char *s;
+	char *p;
+	int len;
 
-	if (!str)
-		str = "(null)";
+	s = va_arg(list, char *);
+	if (s == NULL)
+		s = "(null)";
 
-	if (str[0] == '\0')
-		return (-1);
+	len = _strlen(s);
 
-	for (i = 0; str[i] != '\0'; i++)
-		count_fun += _putchar(str[i]);
+	p = malloc(sizeof(char) * len + 1);
+	if (p == NULL)
+		return (NULL);
 
-	return (count_fun);
+	return (_strcpy(p, s));
 }

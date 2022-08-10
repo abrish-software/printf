@@ -29,10 +29,8 @@ char *_strcpy(char *dest, char *src);
 int _strlen(char *s);
 
 /*Conversion specifiers*/
-char *print_s(va_list list);
-char *print_c(va_list list);
-int print_char(va_list args);
-int print_string(va_list args);
+int *print_char(va_list args);
+int *print_string(va_list args);
 int print_digit(va_list args);
 int print_mod(va_list args);
 int print_rev_string(va_list args);

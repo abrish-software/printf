@@ -22,6 +22,8 @@ typedef struct specifiers
 int _printf(const char *format, ...);
 int get_function(char s, va_list args);
 int _putchar(char c);
+char *_strcpy(char *dest, char *src);
+int _strlen(char *s);
 
 /*Conversion specifiers*/
 int print_char(va_list args);

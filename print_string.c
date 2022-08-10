@@ -16,7 +16,7 @@ int *print_string(va_list args)
 	char *p;
 	int len;
 
-	s = va_arg(list, char *);
+	s = va_arg(args, char *);
 	if (s == NULL)
 		s = "(null)";
 

@@ -10,7 +10,7 @@ int *print_char(va_list args)
 	char *s;
 	char c;
 
-	c = va_arg(list, int);
+	c = va_arg(args, int);
 
 	if (c == 0)
 		c = '\0';

@@ -44,12 +44,12 @@ char *create_buffer(void)
  * @len: length of print-able string
  * @list: va_list
  */
-void write_buffer(char *buffer, int len, va_list list)
+void write_buffer(char *buffer, int len, va_list args)
 {
 	char *buff;
 
 	buff = realloc(buffer, len); /* realloc to correct size */
 	write(1, buff, len); /* print */
 
-	free(buff); va_end(list);
+	free(buff); va_end(args);
 }

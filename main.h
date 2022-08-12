@@ -17,6 +17,7 @@ int print_X(va_list X);
 int print_rot13(va_list R);
 int print_p(va_list p);
 int print_S(va_list S);
+int printf_HEX_aux(unsigned int num);
 /**
  * struct code_format - Struct format
  *
